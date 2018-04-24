@@ -1,1 +1,1 @@
-{"banana": {"Quantidade": 7, "Preço": 1}}
+{"banana": {"Quantidade": 7, "Pre\u00e7o": 1}}
