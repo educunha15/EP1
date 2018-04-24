@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Apr 16 07:36:37 2018
+Created on Tue Apr 24 09:45:10 2018
 
 @author: tiago
 """
 
 import json
-file = open("JSONTESTE.txt", "r")
+file = open("DADOS.txt", "r")
 json_data = file.read()
 file.close()
 
@@ -22,11 +22,13 @@ while True:
       3 - Alterar item
       4 - Alterar preço
       5 - Imprimir estoque
+      6 - Imprimir estoque negativo
+      7 - Valor Monetário
       Faça sua escolha:  '''))
     if a == 0:
         print ('Até mais!')
         data_x = ESTOQUE
-        file = open("JSONTESTE.txt", "w")
+        file = open("DADOS.txt", "w")
         file.write(json.dumps(data_x))
         file.close()
         break
@@ -40,7 +42,7 @@ while True:
                 ESTOQUE[b] = {}
             while True:
                 c = int(input('Quantidade inicial:  '))
-                f = float(input('Qual o preço unitário?'))
+                f = float(input('Qual o preço unitário?:  '))
                 if c < 0:
                     print ('A quantidade inicial não pode ser negativa')
                 else:
@@ -72,11 +74,22 @@ while True:
             g = float(input("Qual o novo preço unitário?:  "))
             ESTOQUE[b]["Preço"] = g
             print("Novo preço é de {0}.".format(float(ESTOQUE[b]["Preço"])))
+        else:
+            print ('Produto não cadastrado.')
     elif a == 5:
         for i in ESTOQUE:
             print(i,':',ESTOQUE[i]['Quantidade'])
             print("Você possui {0} de {1}. O preço total é de {2}.".format(ESTOQUE[i]['Quantidade'], i, ESTOQUE[i]['Quantidade']*ESTOQUE[i]["Preço"]))
-
+        if i not in ESTOQUE:
+            print('Estoque vazio')
+    elif a == 6:
+        for i in ESTOQUE:
+            if ESTOQUE[i]['Quantidade'] < 0:
+                print(i,':',ESTOQUE[i]['Quantidade'])
+    elif a == 7:
+         e = 0
+         for m in ESTOQUE.values():
+             e += m["Quantidade"]*m["Preço"] 
+         print("Valor Monetário é de {0}".format(e))
         
 
-print(ESTOQUE)
