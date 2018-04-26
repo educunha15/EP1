@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 LOJAS: {store: {produto: {'quantidade': xxx, 'valor': xxx}}}
+=======
+{"Teste": {"banana": {"Quantidade": 5, "Pre\u00e7o": 1.0}}}
+>>>>>>> 09777a0b5aca5cad9c4844590b4728437af2eb65

@@ -77,11 +77,12 @@ while True:
         else:
             print ('Produto não cadastrado.')
     elif a == 5:
-        for i in ESTOQUE:
-            print(i,':',ESTOQUE[i]['Quantidade'])
-            print("Você possui {0} de {1}. O preço total é de {2}.".format(ESTOQUE[i]['Quantidade'], i, ESTOQUE[i]['Quantidade']*ESTOQUE[i]["Preço"]))
-        if i not in ESTOQUE:
-            print('Estoque vazio')
+        if ESTOQUE != {}:
+            for i in ESTOQUE:
+                print(i,':',ESTOQUE[i]['Quantidade'])
+                print("Você possui {0} de {1}. O preço total é de {2}.".format(ESTOQUE[i]['Quantidade'], i, ESTOQUE[i]['Quantidade']*ESTOQUE[i]["Preço"]))
+        else:
+            print("Estoque vazio")
     elif a == 6:
         for i in ESTOQUE:
             if ESTOQUE[i]['Quantidade'] < 0:
