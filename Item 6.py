@@ -166,5 +166,3 @@ while True:   #Cria-se um loop que continuará enquanto for verdade
             print(e)   #Imprime todas as lojas que estão no dicionário LOJAS
     else:
         print("ERRO")
-
-print(LOJAS)

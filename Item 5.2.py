@@ -138,5 +138,3 @@ while True:   #Cria-se um loop que continuará enquanto for verdade
     elif A == 4:
         for e in LOJAS:
             print(e)  #Imprime todas as lojas que estão no dicionário LOJAS
-
-print(LOJAS)
